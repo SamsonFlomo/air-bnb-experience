@@ -16,7 +16,7 @@ function App() {
   ));
 
   return (
-    <Container id="App">
+    <Container id="App" fluid>
       <NavBar />
       <Hero />
       <div className="card-container">{cardElements}</div> 
