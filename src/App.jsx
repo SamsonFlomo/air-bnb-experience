@@ -1,21 +1,28 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Container from 'react-bootstrap/Container';
+import NavBar from "./components/navBar.jsx";
+import Hero from "./components/hero.jsx";
+import Card from "./components/card.jsx";
+import data from './components/data';
 
 
 function App() {
-  //const [count, setCount] = useState(0)
+  const cardElements = data.map((item, index) => (
+    <Card 
+        key={index} 
+        {...item}
+      />
+  ));
 
   return (
-    <Container>
-
-      <h1>AirBnB Experience</h1>
-
+    <Container id="App">
+      <NavBar />
+      <Hero />
+      <div className="card-container">{cardElements}</div> 
     </Container>
   )
 }
 
 export default App
+
